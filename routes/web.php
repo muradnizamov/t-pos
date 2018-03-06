@@ -18,9 +18,7 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('/currents', function(){
-	return view('current');
-})->name('currents');
+Route::get('/currents', 'PagesController@current')->name('currents');
 
 Route::get('/currents/new', function(){
 	return view('newcurrent');

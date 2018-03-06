@@ -30,7 +30,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-10">
-			<div id="product-list" class="ps-container" style="height: 440px;overflow:scroll; min-height: 278px;margin-top: 20px;">
+			<div id="product-list" class="ps-container" style="height: 440px;overflow:scroll; min-height: 278px; margin-top: 20px;">
                 <table class="table items table-striped table-bordered table-condensed table-hover sortable_table" id="posTable" style="margin-bottom: 0px; padding: 0px;">
                     <thead class="tableFloatingHeaderOriginal">
                         <tr>
@@ -40,11 +40,12 @@
                             <th>Adresi</th>                           
                             <th>Cep telefonu</th>
                         </tr>
-                    </thead>                    
+                    </thead>                  
                     <tbody class="ui-sortable">
+                    	@foreach ($currents as $current)
                     	<tr data-id="1">
                     		<td>FFF</td>
-                    		<td>FFF</td>
+                    		<td>{{ $current->cr_adi }}</td>
                     		<td>FFF</td>
                     		<td>FFF</td>
                     		<td>FFF</td>                    	
@@ -54,7 +55,8 @@
                     		<td>AAA</td>
                     		<td>AAA</td>
                     		<td>AAA</td>
-                    		<td>AAA</td>                   	
+                    		<td>AAA</td>
+                    	@endforeach              	
                     	</tr>
                     </tbody>
                 </table>
