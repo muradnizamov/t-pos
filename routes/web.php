@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index2');
-});
+Route::get('/', 'PagesController@retail');
+
 Route::get('/index', function () {
     return view('index');
 });

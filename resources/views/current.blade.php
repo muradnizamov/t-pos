@@ -44,18 +44,18 @@
                     <tbody class="ui-sortable">
                     	@foreach ($currents as $current)
                     	<tr data-id="1">
-                    		<td>FFF</td>
-                    		<td>{{ $current->cr_adi }}</td>
-                    		<td>FFF</td>
-                    		<td>FFF</td>
-                    		<td>FFF</td>                    	
+                    		<td id="td1">FFF</td>
+                    		<td id="td2">{{ $current->cr_adi }}</td>
+                    		<td id="td3">FFF</td>
+                    		<td id="td4">FFF</td>
+                    		<td id="td5">FFF</td>                    	
                     	</tr>
                     	<tr data-id="2">
-                    		<td>AAA</td>
-                    		<td>AAA</td>
-                    		<td>AAA</td>
-                    		<td>AAA</td>
-                    		<td>AAA</td>
+                    		<td id="">AAA</td>
+                    		<td id="">AAA</td>
+                    		<td id="">AAA</td>
+                    		<td id="">AAA</td>
+                    		<td id="">AAA</td>
                     	@endforeach              	
                     	</tr>
                     </tbody>
@@ -70,7 +70,7 @@
             </div>
 		</div>
 		<div class="col-md-2 processButtons processButtons3">		
-			<button class="btn btn-default">Tamam</button>
+			<button class="btn btn-default" id="tamam">Tamam</button>
 			<button class="btn btn-default">Vazgeç</button>
 			<button class="btn btn-default">Cari iptal</button>
 			<button class="btn btn-default" id="cleanCurrent">Temizle</button>
@@ -81,3 +81,28 @@
 
 
 @endsection
+
+<script>
+
+$(document).ready(function(){
+$("#tamam").click(function(e) {
+//if(e.which == 13) {
+var td1 = $("#td1").val();
+var td1 = $("#td2").val();
+var td1 = $("#td3").val();
+var td1 = $("#td4").val();
+var td1 = $("#td5").val();
+
+if(td1 != '' || td2 != '' || td3 != '' || td4 != '' || td5 != ''){
+
+$.post("comment-system/refresh-form.php",{ id1: id, username1: username, message1: message},
+			function(data) {
+			$('<?php echo "#form".$id ?>')[0].reset(); //To reset form fields
+			});
+    
+    }
+//}
+});
+});
+
+</script>
