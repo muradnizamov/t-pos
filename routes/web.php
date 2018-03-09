@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/she', 'PagesController@addToBasket');
-
-Route::view('/grocery', 'grocery');
-Route::get('/grocery/post', 'GroceryController@store');
+Route::get('/', 'PagesController@basket')->name('main');
 
 Route::get('/currents', function(){
 	return view('current');

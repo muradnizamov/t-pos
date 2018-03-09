@@ -22,11 +22,8 @@ class PagesController extends Controller
     	return view('current')->with('currents', $currents);
     }
 
-    
-
-    public function functionname ()
+    public function basket ()
     {
-    		
-
+        return view('index');
     }
 }
