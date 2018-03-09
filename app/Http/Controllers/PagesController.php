@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Current;
 use Illuminate\Http\Request;
+use App\Basket;
+use App\Current;
 
 class PagesController extends Controller
 {
-	public function retail ()
+	public function addToBasket (Request $request)
     {
-    	
-    		return view('index2');
+        $basket = new Basket();
+        $basket->sp_satisno = $request->crkod;
+        $basket->save();
+        return response()->json(['success'=>'Data is successfully added']);
     }
 
     public function current ()
@@ -21,12 +24,9 @@ class PagesController extends Controller
 
     
 
-    public function ajax()
+    public function functionname ()
     {
-    		$task1 = $_POST['task'];
-	$message1 = $_POST['comment'];
-	$id1 = $_POST['userID'];
-             return view('ajax.ajax')>with('task2', $task1);
+    		
 
     }
 }
