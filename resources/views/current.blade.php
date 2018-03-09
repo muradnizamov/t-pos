@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('body')
+
 <div id="content">
     <div class="row">       
         <div class="col-md-8">
@@ -87,36 +88,32 @@
 
 @endsection
 
-
-@section('scripts')
-$('.kybrd').mlKeyboard({layout: 'tr_TR',  is_hidden:false});
-
-$('#addCurrentToBasket').on('click', function(){
-    var currentId = $('#posTable tbody tr.selected').attr('data-id');
-
-    if(currentId!==undefined)
-    {  
-        $.ajax({
-            type: "POST",
-            url: '/add_current_to_basket',
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-            data: { 'currentId':currentId },
-            success: function (data) {
-                data = JSON.parse(data); 
-               if(data['status']===true)
-               {
-                window.location = '{{ route('main')}}';
-               }
-            },
-            error: function (data, textStatus, errorThrown) {
-                console.log(data);
-            },
-        });
-    }
-    else
-    {
-        $('#warningModal .modal-body').text('Cari seçmediniz');
-        $('#warningModal').modal('show');
-    }
-});
-@endsection
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+               integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+               crossorigin="anonymous">
+</script>
+<script>
+         jQuery(document).ready(function(){
+            $('.kybrd').mlKeyboard({layout: 'tr_TR',  is_hidden:false});
+            jQuery('#addCurrentToBasket').click(function(e){
+               e.preventDefault();
+               $.ajaxSetup({
+                  headers: {
+                      'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                  }
+              });
+               jQuery.ajax({
+                  url: "{{ url('/') }}",
+                  method: 'post',
+                  data: {
+                     name: "DADA",
+                     type: jQuery('#type').val(),
+                     price: jQuery('#price').val()
+                  },
+                  success: function(result){
+                     jQuery('.alert').show();
+                     jQuery('.alert').html(result.success);
+                  }});
+               });
+            });
+      </script>

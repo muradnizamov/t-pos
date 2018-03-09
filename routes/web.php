@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PagesController@basket')->name('main');
+Route::post('/', 'PagesController@addToBasket');
 
 Route::get('/currents', function(){
 	return view('current');
