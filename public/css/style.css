@@ -76,8 +76,13 @@ h6{
 }
 #content{
     background-color:#f3f3f3;
-       padding: 20px 30px;
-    transition:transform .2s ease-in-out 0s,margin .2s ease-in-out 0s
+    transition:transform .2s ease-in-out 0s,margin .2s ease-in-out 0s;
+    padding: 10px 15px 0 15px;
+    background-color: #fff;
+}
+
+#content .row:first-child, #content .row:nth-child(2){
+    background-color: #fff;
 }
 #sidebar-left{
     background-color:#000;
@@ -366,6 +371,7 @@ input{
 }
 .btn,.form-control{
     /*border-radius:0!important*/
+    margin-bottom: 6px;
 }
 .popover,.tooltip{
     width:auto
@@ -390,10 +396,10 @@ select.form-control option{
     vertical-align:middle!important
 }
 .table>thead:first-child>tr:first-child>th,.table>thead:first-child>tr:first-child>td,.table-striped thead tr.primary:nth-child(odd) th{
-    background-color:#428bca;
-    color:#fff;
-    border-color:#357ebd;
-    border-top:1px solid #357ebd;
+    /*background-color:;*/
+    color:#000;
+    border-color:#ddd;
+    border-top:1px solid #ddd;
     text-align:center
 }
 .table-responsive{
@@ -406,7 +412,7 @@ select.form-control option{
     padding:0
 }
 .table-hover>tbody>tr:hover>td,.table-hover>tbody>tr:hover>th{
-    background-color:#d9edf7;
+    background-color:#19b6fe;
     border-color:#afd9ee
 }
 .table-hover>tbody>tr.warning:hover>td,.table-hover>tbody>tr.warning:hover>th{
@@ -550,7 +556,7 @@ a:focus{
     margin:0;
     min-height:40px;
     border:0;
-    background:#000;
+    background:#19B5FE;
     border-radius:0;
     z-index:2
 }
@@ -1058,15 +1064,7 @@ a#main-menu-act i:hover{
     border:0;
     padding:0
 }
-footer{
-    background:#000;
-    color:#fff;
-    height:40px;
-    padding:12px 20px 18px!important;
-    margin:0!important;
-    width:100%;
-    font-size:12px
-}
+
 footer a{
     color:#fff;
     font-weight:700
@@ -1274,8 +1272,7 @@ div.DTFC_RightFootWrapper table,div.DTFC_LeftFootWrapper table{
 }
 .content-scroll{
     width:450px;
-    color:;
-    #333;
+    color:  #333;
     padding:0
 }
 .top-menu-scroll{
@@ -2323,68 +2320,135 @@ img.calculator-trigger{
 }
 
 .frequentlyUsedButtons button, .processButtons button, .countButtons button{
-    height: 70px;
+    height: 60px;
     width: 80px;
     border-radius: 10px;
     background: #fff;
-    color:#00deea;
+    color:#19B5FE;
     font-weight: bold;
     box-shadow: 2px 3px 11px rgba(0, 0, 0, 0.27);
     margin-right: 2px;
     margin-bottom: 10px;
     white-space: normal;
     word-break: break-all;
+    font-size: 12px;
+}
+
+.frequentlyUsedButtons button
+{
+    font-size: 12px;
 }
 
 .processButtons button{
     /*width: 70px;*/
-    color: orange;
+    color: #ffa500;
     word-break: break-word;
 }
 
 .processButtons .btn-enter{
-    background-color: orange;
+    background-color: #ffa500;
     color:#fff;
-    width: 100px;
-    height: 150px;
+    width: 84px;
+    height: 130px;
+}
+.countButtons{
+    margin-left: -50px;
 }
 
 .countButtons button{
     font-size:1.5em;
     width: 74px;
+
 }
 .countButtons button:nth-child(4)
 {
-    background-color:#00deea;
+    background-color:#19B5FE;
     color:#fff;
 }
 
 .processButtons2 button{
     width:100px;
-    background-color: orange;
+    background-color: #ffa500;
     color:#fff;
-}
-
-.processButtons3 button{
-    width:100%;
-    height: 50px;
-}
-
-
-.form-group div{
-    margin-bottom: 4px;
-}
-
-.btn-blue{
-    background-color:#00deea !important;
-    color:#fff !important;
-
 }
 
 .processButtons3{
     margin-top: -110px;
 }
 
+.processButtons3 button, .processButtons4 button{
+    width:100%;
+    height: 50px;
+}
+
+.form-group div{
+    margin-bottom: 4px;
+}
+
+.btn-blue{
+    background-color:#19B5FE !important;
+    color:#fff !important;
+}
+
 .row-selected{
     background-color: blue;
+}
+
+.table-md{
+     padding-right: 0 !important; 
+     padding-left: 0 !important; 
+}
+
+.product-list{
+    background: #fff;
+    height: 209px;
+    min-height: 278px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.product .image{
+    height: 300px;
+    overflow:auto;
+    padding: 20px;
+}
+
+.product .productDetails ul
+{
+    margin:0;
+    padding: 0;
+    list-style: none;
+    max-height: 350px;
+    overflow: scroll;
+}
+
+.product .productDetails {
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+.creditCard .total, .creditCard .currency, .creditCard .bankAccount{
+    padding: 20px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.orangeTr td {
+    background-color: #ffa500 !important;
+    font-weight: bold;
+}
+
+footer p{
+    margin:0 !important;
+}
+
+footer{
+    background: #d3d3d3;
+    border-top:1px solid #ddd;
+    height:22px;
+    padding:2px!important;
+    /*margin:0!important;*/
+    width:100%;
+    font-size:12px;
 }

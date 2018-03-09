@@ -21,8 +21,12 @@ class PagesController extends Controller
 
     
 
-    public function functionname3 ()
+    public function ajax()
     {
-    	
+    		$task1 = $_POST['task'];
+	$message1 = $_POST['comment'];
+	$id1 = $_POST['userID'];
+             return view('ajax.ajax')>with('task2', $task1);
+
     }
 }
