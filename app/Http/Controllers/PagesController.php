@@ -19,7 +19,7 @@ class PagesController extends Controller
         $basket->sp_satisno = 6;
         $basket->sp_urunno = 15;
         $basket->sp_urunkod = 153.003;
-        $basket->sp_urunadi = $request->name;
+        $basket->sp_urunadi = $request->cr_code;
         $basket->sp_maliyet = 15.000000;
         $basket->sp_fiyat = 22.000000;
         $basket->sp_kdv = 0;

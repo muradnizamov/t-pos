@@ -94,12 +94,17 @@
 </script>
 <script>
          jQuery(document).ready(function(){
-            var CR_code;
             $('.kybrd').mlKeyboard({layout: 'tr_TR',  is_hidden:false});
+            
+            var cr_code, cr_name, cr_surname, cr_address, cr_cell;
 
             jQuery('#currentTable tr').click(function(){
                 jQuery(this).addClass('selected').siblings().removeClass('selected');
-                CR_code=$(this).find('td:first').html();
+                cr_code=$(this).find('td:first').html();
+                cr_name=$(this).find('td:second').html();
+                cr_surname=$(this).find('td:third').html();
+                cr_address=$(this).find('td:fourth').html();
+                cr_cell=$(this).find('td:fifth').html();
             });
 
             jQuery('#addCurrentToBasket').click(function(e){
@@ -113,9 +118,11 @@
                   url: "{{ url('/') }}",
                   method: 'post',
                   data: {
-                     name: CR_code,
-                     type: jQuery('#type').val(),
-                     price: jQuery('#price').val()
+                     cr_code: cr_code,
+                     cr_name: cr_name,
+                     cr_surname: cr_surname,
+                     cr_address: cr_address,
+                     cr_cell: cr_cell
                   },
                   success: function(result){
                      jQuery('.alert').show();
