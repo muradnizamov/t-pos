@@ -32,7 +32,7 @@
     <div class="row">
         <div class="col-md-10">
             <div id="product-list" class="ps-container" style="background:#fff;height: 440px;overflow:scroll; min-height: 278px;margin-top: 20px;">
-                <table class="table items table-striped table-bordered table-condensed table-hover sortable_table" id="posTable" style="margin-bottom: 0px; padding: 0px;">
+                <table class="table items table-striped table-bordered table-condensed table-hover sortable_table" id="currentTable" style="margin-bottom: 0px; padding: 0px;">
                     <thead class="tableFloatingHeaderOriginal">
                         <tr>
                             <th>Kodu</th>
@@ -94,7 +94,14 @@
 </script>
 <script>
          jQuery(document).ready(function(){
+            var CR_code;
             $('.kybrd').mlKeyboard({layout: 'tr_TR',  is_hidden:false});
+
+            jQuery('#currentTable tr').click(function(){
+                jQuery(this).addClass('selected').siblings().removeClass('selected');
+                CR_code=$(this).find('td:first').html();
+            });
+
             jQuery('#addCurrentToBasket').click(function(e){
                e.preventDefault();
                $.ajaxSetup({
@@ -106,7 +113,7 @@
                   url: "{{ url('/') }}",
                   method: 'post',
                   data: {
-                     name: "DADA",
+                     name: CR_code,
                      type: jQuery('#type').val(),
                      price: jQuery('#price').val()
                   },
