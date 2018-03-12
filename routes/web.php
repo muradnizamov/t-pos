@@ -11,8 +11,12 @@
 |
 */
 
-Route::get('/', 'PagesController@basket')->name('main');
-Route::post('/', 'PagesController@addToBasket');
+Route::get('/', 'PageController@index')->name('main');
+
+Route::get('/gift_card', function(){
+	return view('gift_card');
+})->name('gift');
+
 
 Route::get('/currents', function(){
 	return view('current');
@@ -42,15 +46,19 @@ Route::get('/payments/credit_card', function(){
 	return view('credit_card_payment');
 })->name('credit_card');
 
+Route::get('/payments/cash', function(){
+	return view('cash_payment');
+})->name('cash_payment');
+
+Route::get('/payments/bonus', function(){
+	return view('bonus_payment');
+})->name('bonus_payment');
+
 Route::get('/payments/doc_payment', function(){
 	return view('doc_payment');
 })->name('doc_payment');
 
+
 Route::post('/add_product_to_basket', 'BasketController@addToBasket');
 Route::post('/add_current_to_basket', 'BasketController@addCurrentToBasket');
 Route::post('/create_new_current', 'CurrentController@create');
-
-Route::get('home', function () {
-    return response('Hello World', 200)
-                  ->header('Content-Type', 'text/plain');
-});

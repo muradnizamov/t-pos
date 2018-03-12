@@ -149,35 +149,5 @@
 @endsection
 
 @section('scripts')
-$('.kybrd').mlKeyboard({layout: 'tr_TR',  is_hidden:false});
-
-$('#addToBasket').on('click', function(){
-    var productId = $('#posTable3 tbody tr.selected').attr('data-id');
-
-    if(productId!==undefined)
-    {  
-        $.ajax({
-            type: "POST",
-            url: '/add_product_to_basket',
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-            data: { 'productId':productId },
-            success: function (data) {
-                data = JSON.parse(data); 
-               if(data['status']===true)
-               {
-                window.location = '{{ route('main')}}';
-               }
-            },
-            error: function (data, textStatus, errorThrown) {
-                console.log(data);
-            },
-        });
-    }
-    else
-    {
-        $('#warningModal .modal-body').text('Ürün seçmediniz');
-        $('#warningModal').modal('show');
-    }
-});
-
+$('.kybrd').mlKeyboard({layout: 'az_AZ',  is_hidden:false});
 @endsection

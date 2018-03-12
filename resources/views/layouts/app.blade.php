@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="_token" content="{{csrf_token()}}">
+        <meta name="csrf-token" content="{{csrf_token()}}">
 
-        <title>Offline module | Cowsel</title>
+        <title>POS | Cowsel</title>
         <link href="{{asset('css/theme.css')}}" rel="stylesheet" type="text/css">
         <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css">
         <link href="{{asset('css/kybrd.css')}}" rel="stylesheet" type="text/css">
@@ -21,10 +21,10 @@
                         <li class="dropdown">
                             <a class="btn account dropdown-toggle" data-toggle="dropdown" href="#" tabindex="-1">
                                 <div class="user">
-                                    <span>Welcome! owner</span>
+                                    <span>@lang('custom.welcome') owner</span>
                                 </div>
                             </a>
-                            <ul class="dropdown-menu pull-right">
+                            {{-- <ul class="dropdown-menu pull-right">
                                 <li>
                                     <a href="https://sma.tecdiary.com/admin/auth/profile/1" tabindex="-1"><i class="fa fa-user"></i> Profile </a>
                                 </li>
@@ -35,7 +35,7 @@
                                 <li>
                                     <a href="https://sma.tecdiary.com/admin/auth/logout" tabindex="-1"><i class="fa fa-sign-out"></i> Logout </a>
                                 </li>
-                            </ul>
+                            </ul> --}}
                         </li>
                     </ul>
                 </div>
@@ -47,16 +47,16 @@
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Uyari</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    Fiyat sifir oldugu icin satish yapilamaz
+                    @lang('custom.zeroPriceWarning')
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('custom.close')</button>
                   </div>
                 </div>
               </div>
@@ -66,43 +66,43 @@
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">İskonto girişi</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">@lang('custom.discountEntry')</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
                     <div class="row">
-                        <label class="col-md-2" for="">İskonto</label>                        
+                        <label class="col-md-2" for="">@lang('custom.discount')</label>                        
                         <div class="col-md-7">
-                            <input type="text" id="discountQt" name="" class="form-control" placeholder="İskonto">
+                            <input type="text" id="discountQt" name="" class="form-control" placeholder="@lang('custom.discount')">
                         </div>
                     </div>
                     <div class="row">
-                        <label class="col-md-3" for="">İndirim özelkodu</label>  
+                        <label class="col-md-3" for="">@lang('custom.promoCode')</label>  
                         <div class="col-md-6">
                             <select name="" id="promoCode" class="form-control">
-                                <option value="0001">0001 Sezon indiirmi</option>
+                                <option value="0001">0001 Sezon indirimi</option>
                             </select>
                         </div>
                     </div>
                     <div class="row">                        
                         <div class="col-md-4 processButtons processButtons4">
-                            Malzeme bazında
-                            <button class="btn btn-default" id="calculateDiscount">% İndirim</button>
-                            <button class="btn btn-default">Tutar indirimi</button>
-                            <button class="btn btn-default">İndirim iptali</button>
+                            @lang('custom.materialBased')
+                            <button class="btn btn-default" id="calculateDiscount">% @lang('custom.discount')</button>
+                            <button class="btn btn-default">@lang('custom.amountReduced') </button>
+                            <button class="btn btn-default">@lang('custom.canceledDiscount') </button>
                         </div>
                         <div class="col-md-4  processButtons processButtons4">
-                            Belge bazında
-                            <button class="btn btn-default">% İndirim</button>
-                            <button class="btn btn-default">Tutar indirimi</button>
-                            <button class="btn btn-default">İndirim iptali</button>
+                            @lang('custom.docBased')
+                            <button class="btn btn-default" id="calculateDiscount">% @lang('custom.discount')</button>
+                            <button class="btn btn-default">@lang('custom.amountReduced') </button>
+                            <button class="btn btn-default">@lang('custom.canceledDiscount') </button>
                         </div>
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('custom.cancel')</button>
                   </div>
                 </div>
               </div>
@@ -111,7 +111,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Menü</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">@lang('custom.menu')</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -119,40 +119,109 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-6 processButtons processButtons4">
-                                <button class="btn">Belge Beklet</button>
-                                <button class="btn">Belge Getir</button>
-                                <button class="btn">Belge Iptal</button>
-                                <button class="btn">Belge Hediye Kartı</button>
-                                <button class="btn">Taksit Ödemesi</button>
+                                <button class="btn">@lang('custom.docOnHold')</button>
+                                <button class="btn">@lang('custom.bringDoc')</button>
+                                <button class="btn">@lang('custom.cancelDoc')</button>
+                                <button class="btn" data-toggle="modal" href="#giftCardModal"> @lang('custom.giftCard')</button>
+                                <button class="btn">@lang('custom.taksitPayment')</button>
                             </div>
                             <div class="col-md-6 processButtons processButtons4">
-                                <button class="btn">Kasa Nakit Giriş</button>
-                                <button class="btn">Kasa Nakit çıkış</button>
-                                <button class="btn">Son Fişi Yazdır</button>
-                                <button class="btn">Sözleşme Yazdır</button>
-                                <button class="btn">Tahsilat yazdır</button>
+                                <button class="btn"> @lang('custom.cashEntry') </button>
+                                <button class="btn"> @lang('custom.cashOut')</button>
+                                <button class="btn">@lang('custom.printLastReceipt') </button>
+                                <button class="btn">@lang('custom.printContract') </button>
+                                <button class="btn">@lang('custom.printColl') </button>
+                                {{-- todo --}}
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('custom.close') </button>
                     </div>
                 </div>
               </div>
             </div>
+            @include('modals')
         </div>
 
-    <script src="{{ asset('js/jquery.js')}}"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
-    {{-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script> --}}
-    <script src="{{ asset('js/jquery.accent-keyboard.js') }}"></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery.floatThead.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>    
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/virtual-keyboard/1.28.0/js/jquery.keyboard.min.js"></script> --}}
-    <script src="{{asset('js/kybrd.js')}}"></script>
-    <script>
+    <script src="{{ asset('js/kybrd.js') }}"></script>
+    <script>    
+
+    function selectTableRow(tableId, tr){
+          if ( tr.hasClass('selected') ) {
+            tr.removeClass('selected');
+        }
+        else {
+            $('#'+tableId+' tbody tr.selected').removeClass('selected');
+            tr.addClass('selected');
+        }
+    }
+
+    var dtParams = {
+        paging: false,
+    }
+    var productTableParams = {
+            columnDefs: [
+                { width: 500, targets: 3 }
+            ],
+            paging:         false,
+            scrollY:        "300px",
+            scrollX:        true,
+            scrollCollapse: true,
+            fixedColumns: true,
+        };
+
+    var tables = ['posTable', 'posTable3','posTable4'];
+
+    $(document).on('shown.bs.modal', '.customModal', function () {
+         $('#mlkeyboard').fadeIn('fast'); 
+        if($.fn.dataTable.isDataTable('#posTable')) tableCurrent.columns.adjust();
+        if($.fn.dataTable.isDataTable('#posTable3')) tableProduct.columns.adjust(); 
+    });
+ 
+    $(document).on('hidden.bs.modal', '.customModal', function (e) { 
+        $('#mlkeyboard').fadeOut('fast');
+        $('body').on('keyup', function(){
+            $('#quantity').focus();
+        });
+    });
+
+    $(document).on('keyup','.focused', function(){ 
+        var i =$(this).attr('data-column');  
+        var v =$(this).val(); 
+        if($.fn.dataTable.isDataTable( '#posTable3')) tableProduct.columns(i).search(v).draw();
+        if($.fn.dataTable.isDataTable( '#posTable')) tableCurrent.columns(i).search(v).draw();
+        // tableSeller.columns(i).search(v).draw();
+    });
 
     $(document).ready(function () 
     {
+        $('.kybrd').mlKeyboard({layout: 'az_AZ',  is_hidden:false});
+        $('#mlkeyboard').hide();
+
+        $('#openProductModal').on('click', function(){
+            $('#productModal').modal('show');
+            if(!$.fn.dataTable.isDataTable( '#posTable3')) tableProduct = $('#posTable3').DataTable(productTableParams);
+            $("#posTable3_filter").css("display","none");
+            $('#mlkeyboard').show(); 
+        });
+
+        $('#openCurrentModal').on('click', function(){
+            $('#currentModal').modal('show');
+            if(!$.fn.dataTable.isDataTable( '#posTable')) tableCurrent = $('#posTable').DataTable(dtParams);
+            $("#posTable_filter").css("display","none");
+            $('#mlkeyboard').show();
+        });
+        // var tableCurrent = $('#posTable').DataTable();
+
+        //for fixed Thead
+        var $table = $('#posTable1');
+        $table.floatThead();
+
         $('#cleanCurrent').on('click', function(){
             $('#customerCurrent').val('');
             $('#billCurrent').val('');
@@ -164,78 +233,50 @@
             $('#sellerCode').val('');
             $('#sellerDesc').val('');
         });
-
-        var tableCurrent = $('#posTable').DataTable({
-            select: {    
-                style:     'os',
-                className: 'row-selected'
-            }
-        });
-
-        var tableProduct = $('#posTable3').DataTable({
-            scrollY:        "300px",
-            scrollX:        true,
-            scrollCollapse: true,
-            paging:         false,
-            columnDefs: [
-                { width: 500, targets: 2 }
-            ],
-            fixedColumns: true,
-        });
-
-        var tableSeller = $('#posTable4').DataTable({
-            select: {    
-                style:     'os',
-                className: 'selected'
-            }
-        });
+  
+        var tableSeller = $('#posTable4').DataTable();
 
         $('#posTable3 tbody').on( 'click', 'tr', function () {
-            if ( $(this).hasClass('selected') ) {
-                $(this).removeClass('selected');
-            }
-            else {
-                tableProduct.$('tr.selected').removeClass('selected');
-                $(this).addClass('selected');
-            }
+            selectTableRow('posTable3',$(this));
         });
 
         $('#posTable1 tbody').on( 'click', 'tr', function () {
-            if ( $(this).hasClass('selected') ) {
-                $(this).removeClass('selected');
-            }
-            else {
-                tableProduct.$('tr.selected').removeClass('selected');
-                $(this).addClass('selected');
-            }
+            selectTableRow('posTable1',$(this));
         });
 
         $('#posTable tbody').on( 'click', 'tr', function () {
-            if ( $(this).hasClass('selected') ) {
-                $(this).removeClass('selected');
-            }
-            else {
-                tableCurrent.$('tr.selected').removeClass('selected');
-                $(this).addClass('selected');
-            }
+            selectTableRow('posTable',$(this));
+        });
+       
+        tables.forEach(function(item, i, tables){
+            $("#"+item+"_filter").css("display","none"); 
+            $("#"+item+"_length").css("display","none"); 
+            $("#"+item+"_paginate").css("display","none"); 
         });
 
-        $("#posTable_filter").css("display","none");   
-        $("#posTable_length").css("display","none");   
-        $("#posTable3_filter").css("display","none");   
-        $("#posTable3_length").css("display","none"); 
-        $("#posTable4_filter").css("display","none");   
-        $("#posTable4_length").css("display","none");  
-        $("#posTable4_paginate").css("display","none");  
+        $('.form-control').on('click', function(){
+            $('.form-control').removeClass('focused');
+            $(this).addClass('focused');
+        });  
 
+        // for keyboard plugin events table filtering
+        // $('.focused').on( 'keyup', function () {  
+        //     console.log('triggered .focused');
+        //     var i =$(this).attr('data-column');  
+        //     var v =$(this).val(); 
+        //     if($.fn.dataTable.isDataTable( '#posTable3')) tableProduct.columns(i).search(v).draw();
+        //     if($.fn.dataTable.isDataTable( '#posTable')) tableCurrent.columns(i).search(v).draw();
+        //     tableSeller.columns(i).search(v).draw();
+        // }); 
 
-        $('.form-control').on( 'keyup click', function () {  
+        $('.form-control').on( 'keyup', function () {  
+            console.log('triggered .control');
             var i =$(this).attr('data-column');  
             var v =$(this).val(); 
-            tableProduct.columns(i).search(v).draw();
-            tableCurrent.columns(i).search(v).draw();
+            if($.fn.dataTable.isDataTable( '#posTable3')) tableProduct.columns(i).search(v).draw();
+            if($.fn.dataTable.isDataTable( '#posTable')) tableCurrent.columns(i).search(v).draw();
             tableSeller.columns(i).search(v).draw();
-        } );   
+        });  
 
         $(document).mouseup(function(e) 
         {
@@ -254,13 +295,21 @@
             $(this).find('td').eq(0).find('input').prop('checked', true);            
         });
 
-        $('#posTable1 tbody tr').on('click', function(e){   
-            $('#posTable1 tr').each(function(){
-                $(this).find('td').eq(0).find('input').removeAttr('checked');            
-            });
- 
+        $('#posTable tbody tr').on('click', function(e){   
+            $('#posTable tr').each(function(){
+                $(this).find('td').eq(0).find('input').removeAttr('checked');
+            })
+             
             $(this).find('td').eq(0).find('input').prop('checked', true);            
         });
+
+        // $('#posTable1 tbody tr').on('click', function(e){   
+        //     $('#posTable1 tr').each(function(){
+        //         $(this).find('td').eq(0).find('input').removeAttr('checked');            
+        //     });
+ 
+        //     $(this).find('td').eq(0).find('input').prop('checked', true);            
+        // });
 
         $('.countButtons .btn').on('click', function(){
             var th = $(this);
@@ -284,7 +333,8 @@
         }); 
 
         $('#cancelProduct').on('click', function(){
-            $('#posTable1 tbody').find('tr.selected').remove();            
+            // $('#posTable1 tbody').find('tr.selected').remove(); 
+            $('#appStatus').attr('data-status','cancel').text('İptal');           
         });
 
         $('#cancelLastProduct').on('click', function(){

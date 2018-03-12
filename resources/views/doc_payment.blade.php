@@ -50,13 +50,9 @@
 	</div>
 	<div class="row">
 		<div class="col-md-10 processButtons ">
-			<button class="btn btn-default">Nakit</button>
-			<button class="btn btn-default">Kredi kartı</button>
-			<button class="btn btn-default">Puanla ödeme</button>
-			<button class="btn btn-default">Çek</button>
-			<button class="btn btn-default">Açık Hesap</button>
-			<button class="btn btn-default">Sipariş Açık Hsp.</button>
-			<button class="btn btn-default">Taksit</button>
+			<button class="btn btn-default" href="{{ route('cash_payment') }}">Nakit</button>
+			<button class="btn btn-default" href="{{ route('credit_card') }}">Kredi kartı</button>
+			<button class="btn btn-default" href="{{ route('bonus_payment') }}">Puanla ödeme</button>
 		</div>
 	</div>
 </div>

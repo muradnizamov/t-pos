@@ -79,7 +79,7 @@ return [
     'bonusPayment' => 'Puan ödeme',
     'remaining' => 'Kalan',
     'bonusUsable' => 'Kullanilabilir Puan',
-    'bonusUsable' => 'Kullanilabilir Puan Tutar',
+    'bonusUsableEq' => 'Kullanilabilir Puan Tutar',
     'ok' => 'Tamam',
 
     'currencyToBeUsed' => 'Kullanılacak para birimi',

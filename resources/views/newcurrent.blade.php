@@ -53,7 +53,7 @@
 @endsection
 
 @section('scripts')
-$('.kybrd').mlKeyboard({layout: 'tr_TR',  is_hidden:false});
+$('.kybrd').mlKeyboard({layout: 'az_AZ',  is_hidden:false});
 
 $('#saveCurrent').on('click', function(){
 	var firstName = $('#firstNameCustomerNew').val(),

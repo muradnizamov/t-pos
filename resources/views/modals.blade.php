@@ -90,13 +90,13 @@
                                         <th> @lang('custom.matDesc') </th>
                                         <th> @lang('custom.sellPrice') </th>                           
                                         <th> @lang('custom.vat') </th>
-                                        <th> @lang('custome.depNo') </th>
-                                        <th> @lang('custome.unit') </th>
-                                        <th> @lang('custome.specialCode') </th>
-                                        <th> @lang('custome.specialCode')2 </th>
-                                        <th> @lang('custome.specialCode')3 </th>
-                                        <th> @lang('custome.specialCode')4 </th>
-                                        <th> @lang('custome.specialCode')5 </th>
+                                        <th> @lang('custom.depNo') </th>
+                                        <th> @lang('custom.unit') </th>
+                                        <th> @lang('custom.specialCode') </th>
+                                        <th> @lang('custom.specialCode')2 </th>
+                                        <th> @lang('custom.specialCode')3 </th>
+                                        <th> @lang('custom.specialCode')4 </th>
+                                        <th> @lang('custom.specialCode')5 </th>
                                     </tr>
                                 </thead>                    
                                 <tbody>

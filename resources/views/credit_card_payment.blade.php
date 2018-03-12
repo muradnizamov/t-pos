@@ -17,7 +17,7 @@
 			<input type="radio" class="" name="currency">Yerel para birimi<br/>
 			<input type="radio" class="" name="currency">İşlem dövizi
 		</div>
-		<div class="col-md-6 bankAccount" >
+		<div class="col-md-4 bankAccount" >
 			<label for="" class="col-md-3">Banka hesabı</label>
 			<div class="col-md-9">
 				<select name="" id="" class="form-control">
@@ -45,6 +45,10 @@
 				<input type="text" class="form-control" placeholder="0.00">
 			</div>
 		</div>
+		<div class="col-md-2 processButtons">
+			<button class="btn btn-default" style="width:100%;">Tamam</button>
+			<button class="btn btn-default" style="width:100%;" href={{ url('/')}}>Vazgeç</button>
+		</div>
 	</div>
 
 </div>
@@ -52,5 +56,5 @@
 @endsection
 
 @section('scripts')
-$('.kybrd').mlKeyboard({layout: 'tr_TR',  is_hidden:false});
+$('.kybrd').mlKeyboard({layout: 'az_AZ',  is_hidden:false});
 @endsection

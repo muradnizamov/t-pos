@@ -2319,7 +2319,7 @@ img.calculator-trigger{
     background-color:#ddd;
 }
 
-.frequentlyUsedButtons button, .processButtons button, .countButtons button{
+.frequentlyUsedButtons button, .processButtons button, .countButtons button, .countButtons2 button{
     height: 60px;
     width: 80px;
     border-radius: 10px;
@@ -2355,12 +2355,12 @@ img.calculator-trigger{
     margin-left: -50px;
 }
 
-.countButtons button{
+.countButtons button, .countButtons2 button{
     font-size:1.5em;
     width: 74px;
-
 }
-.countButtons button:nth-child(4)
+
+.countButtons button:nth-child(4), .countButtons2 button:nth-child(4)
 {
     background-color:#19B5FE;
     color:#fff;
@@ -2451,4 +2451,33 @@ footer{
     /*margin:0!important;*/
     width:100%;
     font-size:12px;
+}
+.focused{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+
+.customModal,.customModalNoKybrd {
+    top:10px !important;
+}
+.customModal .modal-dialog, .customModalNoKybrd .modal-dialog{
+    width:100%!important;
+}
+
+.customModal .modal-dialog .modal-content, .customModalNoKybrd .modal-dialog .modal-content{
+    height: 830px !important;
+}
+
+.customModal .modal-dialog .modal-content .modal-body, .customModalNoKybrd .modal-dialog .modal-content .modal-body{
+    height: 710px !important;
+    padding: 0 !important;
+}
+#docPaymentModal .processButtons input{
+    height: 22px;
+}
+
+#docPaymentModal .processButtons .btn{
+    height: 48px;
 }
