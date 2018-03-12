@@ -49,3 +49,8 @@ Route::get('/payments/doc_payment', function(){
 Route::post('/add_product_to_basket', 'BasketController@addToBasket');
 Route::post('/add_current_to_basket', 'BasketController@addCurrentToBasket');
 Route::post('/create_new_current', 'CurrentController@create');
+
+Route::get('home', function () {
+    return response('Hello World', 200)
+                  ->header('Content-Type', 'text/plain');
+});
